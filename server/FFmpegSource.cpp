@@ -97,7 +97,7 @@ void FFmpegSource::play(const string &ffmpeg_cmd_key, const string &src_url,cons
     InfoL << cmd;
 
     if (is_local_ip(_media_info._host)) {
-        //推流给自己的，通过判断流是否注册上来判断是否正常
+        //推流给自己的，通过判断流是否注册上来判断是否正常   
         if(_media_info._schema != RTSP_SCHEMA && _media_info._schema != RTMP_SCHEMA){
             cb(SockException(Err_other,"本服务只支持rtmp/rtsp推流"));
             return;

@@ -14,7 +14,7 @@ jobs:
       run: mv -f .gitmodules_github .gitmodules && git submodule sync && git submodule update --init
 
     - name: 安装brew
-      run: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     - name: brew安装依赖库(非必选)
       run: brew update && brew install cmake openssl sdl2 ffmpeg
